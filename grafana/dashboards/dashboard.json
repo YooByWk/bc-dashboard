@@ -1,0 +1,35 @@
+{
+  "title": "Token Monitoring",
+  "panels": [
+    {
+      "type": "stat",
+      "title": "Total Minted Tokens",
+      "targets": [{ "expr": "total_token_minted" }]
+    },
+    {
+      "type": "stat",
+      "title": "Total Burned Tokens",
+      "targets": [{ "expr": "total_token_burned" }]
+    },
+    {
+      "type": "stat",
+      "title": "Circulating Supply",
+      "targets": [{ "expr": "circulating_token_supply" }]
+    },
+    {
+      "type": "stat",
+      "title": "Escrows Created",
+      "targets": [{ "expr": "escrow_created_total" }]
+    },
+    {
+      "type": "stat",
+      "title": "Cash Charged",
+      "targets": [{ "expr": "cash_charged_total" }]
+    },
+    {
+      "type": "stat",
+      "title": "Cash Withdrawn",
+      "targets": [{ "expr": "cash_withdrawn_total" }]
+    }
+  ]
+}

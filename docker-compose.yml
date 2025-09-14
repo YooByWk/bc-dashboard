@@ -7,6 +7,11 @@ services:
       - "58000:58000"
     networks:
       - monitoring
+    environment:
+      - RPC_URL=http://host.docker.internal:8545
+      - MY_TOKEN_ADDR=0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512
+      - ESCROW_ADDR=0x5FbDB2315678afecb367f032d93F642f64180aa3
+      - CASH_ADDR=0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0
 
   prometheus:
     image: prom/prometheus
@@ -25,10 +30,14 @@ services:
     image: grafana/grafana
     ports:
       - "4000:3000"
+    environment:
+      - GF_LOG_LEVEL=warn
     networks:
       - monitoring
     depends_on:
       - prometheus
+    volumes:
+      - ./grafana/provisioning:/etc/grafana/provisioning
 
 networks:
   monitoring:

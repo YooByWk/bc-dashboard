@@ -5,9 +5,9 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY event_listner.py .
+COPY . .
 COPY contracts_abi/ /app/contracts_abi/
 
-EXPOSE 9999
+EXPOSE 58000
 
-CMD ["python", "event_listner.py"]
+CMD ["python", "event_listener.py"]
